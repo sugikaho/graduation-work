@@ -48,4 +48,13 @@ main{
 .main1_title{
   text-align: center;
   padding-top: 10px;
+  border: solid 2px rgba(252, 97, 8, 0.808);
+  box-sizing: border-box;
+  line-height: 50px;
+}
+
+.purpose{
+  text-align: left;border: solid 2px rgba(252, 97, 8, 0.808);
+  box-sizing: border-box;
+  line-height: 100px;
 }
