@@ -1,0 +1,42 @@
+body{
+  margin: 0;
+}
+
+.header{
+  width: 100%;
+  height: 70px;
+  background-color: rgba(252, 97, 8, 0.808);
+  padding: 20px 50px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header_title{
+  color: #fff;
+}
+
+.header_img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(bg_img.jpg);
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h2{
+  margin: 0;
+  font-size: 30px;
+  font-weight: normal;
+  color: #fff;
+}
+
+main{
+  padding: 5%;
+  height: 100vw;
+}
