@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2 class="m-5" style="text-align: center;">「{{ post.title }}」の詳細</h2>
+<div class="card w-50 mb-3" style="margin: auto;">
+    <div class="card-body">
+        <h2 class="card-title" style="font-size: 5vw;">{{ post.title }}</h2>
+        <p style="font-size: 3vw;">期限：{{ post.due.date() }}　{{ post.due.time() }}</p>
+        <p style="font-size:3vw;">ジャンル番号：{{ post.genre }}</p>
+        <p style="font-size:3vw;">住所：{{ post.adress }}</p>
+        <p style="font-size:3vw;">詳細：{{ post.detail }}</p>
+        <div class="pt-2">
+            <a class="btn btn-outline-success" href="/" role="button">戻る</a>
+            <a class="btn btn-success" href="/update/{{ post.id }}" role="button">編集</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

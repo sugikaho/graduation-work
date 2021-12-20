@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+  <h2 class="m-5" style="text-align: center;">ジャンル２(食事)一覧</h2>
+  {% for post in post_all %}
+    {% if post.genre == 2 %}
+      <div class="card w-50 mb-3" style="margin: auto;">
+        <div class="card-body">
+          <h2 class="card-title">{{ post.title }}</h2>
+            <p>ジャンル：{{ post.genre }}</p>
+            <p>予定日：{{ post.due.date() }}</p>
+            <p>予定時間：{{ post.due.time() }}</p>
+            <p>住所：{{ post.adress }}</p>
+            <p>詳細：{{ post.detail }}</p>
+            <a class="btn btn-outline-primary btn-sm" href="/detail/{{ post.id }}" role="button">詳細</a>
+            <a class="btn btn-outline-success btn-sm" href="/update/{{ post.id }}" role="button">編集</a>
+            <a class="btn btn-danger btn-sm" href="/delete/{{ post.id}}" role="button">完了</a> 
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endblock %}

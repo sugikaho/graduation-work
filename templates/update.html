@@ -1,0 +1,38 @@
+
+<!-- base.htmlに追加 -->
+{% extends 'base.html' %}
+
+{% block body %}
+<h2 class="m-5 text-muted text-center">編集</h2>
+<form class="m-5" action="/update/{{ post.id }}" method="POST">
+    <!-- タイトル -->
+    <div class="form-group pb-3">
+        <label for="title">タイトル：</label>
+        <input type="text" class="form-control" name="title" aria-describedby="title-help" value={{ post.title }}>
+    </div>
+    <!-- ジャンル -->
+    <div class="form-group pb-3">
+        <label for="genre">ジャンル：</label>
+        <input type="number" class="form-control" name="genre" value={{ post.genre }} min="1" max="5" required>
+    </div>
+    <!-- 期限 -->
+    <div class="form-group pb-3">
+        <label for="due">予定日：</label>
+        <input type="datetime-local" name="due" value={{ post.due.date() }} required>
+    </div>
+    <!-- 住所 -->
+    <div class="form-group pb-3">
+        <label for="adress">住所：</label>
+        <input type="text" class="form-control" name="adress" value={{ post.adress }}>
+    </div>
+    <!-- 詳細 -->
+    <div class="form-group pb-3">
+        <label for="detail">詳細情報：</label>
+        <input type="text" class="form-control" name="detail" value={{ post.detail }}>
+    </div>
+    <!-- フォームに追加 -->
+    <a class="btn btn-outline-primary" href="/" role="button">ホームに戻る</a>
+    <button type="submit" class="btn btn-outline-danger">予定を変更する</button>
+</form>
+
+{% endblock %}

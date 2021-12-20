@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+<!-- base.htmlに追加 -->
+{% block body %}
+<h2 class="m-5" style="color: salmon;">新規予定追加</h2>
+<form class="m-5" action="/" method="POST">
+    <!-- タイトル追加 -->
+    <div class="form-group pb-3">
+        <label for="title">タイトル：</label>
+        <input type="text" class="form-control" name="title" aria-describedby="title-help">
+        <small id="title-help" class="form-text text-muted">旅の行動予定を入力してください</small>
+    </div>
+    <!-- ジャンル追加 -->
+    <div class="form-group pb-3">
+        <label for="genre">ジャンル：</label>
+        <input type="number" class="form-control" name="genre" min="1" max="5" required>
+    </div>
+    <!-- 期限追加 -->
+    <div class="form-group pb-3">
+        <label for="due">予定日：</label>
+        <input type="datetime-local" name="due" required>
+    </div>
+    <!-- 住所追加 -->
+    <div class="form-group pb-3">
+        <label for="adress">住所：</label>
+        <input type="text" class="form-control" name="adress">
+    </div>
+    <!-- 詳細追加 -->
+    <div class="form-group pb-3">
+        <label for="detail">詳細情報：</label>
+        <input type="text" class="form-control" name="detail">
+    </div>
+    <!-- フォームに追加 -->
+    <a class="btn btn-outline-primary" href="/" role="button">ホームに戻る</a>
+    <button type="submit" class="btn btn-outline-danger">予定に追加
+</form>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+<!-- base.htmlに追加 -->
+{% extends 'base.html' %}
+
+<!-- index.htmlのbody部分に追加 -->
+{% block body %}
+<div class="container">
+  <!-- 新規予定追加ボタン -->
+  <a class="btn btn-outline-danger btn-lg m-5" href="/create" role="button">新しい予定を追加する</a>
+  <!-- ジャンルの説明 -->
+  <div class="border border-success" style="padding: 3%; margin-bottom: 5%;">
+    <p>ジャンル番号は以下のようになっています。</p>
+    <p>１：移動(新幹線、バス、車、タクシー、飛行機など)</p>
+    <p>２：食事(朝食、昼食、夕食処等の情報)</p>
+    <p>３：観光(食事とホテル以外で旅の途中に立ち寄るところ)</p>
+    <p>４：宿泊処(ホテルや旅館など旅で使用する宿泊処の予定の時に使用してください)</p>
+    <p>５：その他</p>
+  </div>
+  <!-- 予定の分だけ各項目表示を繰り返し -->
+  {% for post in posts %}
+  <div class="card w-50 mb-3" style="margin: auto;">
+    <div class="card-body">
+      {% if post.due.date() < today %}
+      <div class="alert alert-warning" role="alert">
+        予定時間を過ぎています
+      </div>
+      {% endif %}
+      <h2 class="card-title">{{ post.title }}</h2>
+      <p>ジャンル：{{ post.genre }}</p>
+      <p>予定日：{{ post.due.date() }}</p>
+      <p>予定時間：{{ post.due.time() }}</p>
+      <p>住所：{{ post.adress }}</p>
+      <p>詳細：{{ post.detail }}</p>
+      <a class="btn btn-outline-primary btn-sm" href="/detail/{{ post.id }}" role="button">詳細</a>
+      <a class="btn btn-outline-success btn-sm" href="/update/{{ post.id }}" role="button">編集</a>
+      <a class="btn btn-danger btn-sm" href="/delete/{{ post.id}}" role="button">完了</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
