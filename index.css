@@ -54,7 +54,8 @@ main{
 }
 
 .purpose{
-  text-align: left;border: solid 2px rgba(252, 97, 8, 0.808);
+  border: solid 2px rgba(252, 97, 8, 0.808);
   box-sizing: border-box;
-  line-height: 100px;
+  padding-top: 5px;
+  line-height: 80px;
 }
