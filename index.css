@@ -64,7 +64,7 @@ main{
 
 .appabout{
   max-width: 100%;
-  height: auto;
+  height: 120vh;
   background-image: url(pwp_appabout.png);
   display: flex;
   justify-content: center;
