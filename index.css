@@ -63,12 +63,12 @@ main{
 }
 
 .appabout{
+  max-width: 100%;
+  height: auto;
+  background-image: url(pwp_appabout.png);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(pwp_appabout.png);
-  height: 80vh;
-  width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
 }
