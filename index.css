@@ -61,3 +61,14 @@ main{
   padding: 0px 20px 20px;
   margin-top: 10px;
 }
+
+.appabout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(pwp_appabout.png);
+  height: 80vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
