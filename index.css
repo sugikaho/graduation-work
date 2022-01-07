@@ -62,13 +62,7 @@ main{
   margin-top: 10px;
 }
 
-.appabout{
-  max-width: 100%;
-  height: 120vh;
-  background-image: url(pwp_appabout.png);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.app_about{
+  width: 95%;
+  height: auto;
 }
